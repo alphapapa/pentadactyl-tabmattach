@@ -51,7 +51,7 @@ group.commands.add(
                 // These are from e.g. completion.buffer and
                 // completion.window, replacing a call like
                 // completion.buffer(context)
-                let filter = context.filter.toLowerCase();  // Not sure if this has any effect or is necessary
+                context.filters.push(context.filter.toLowerCase);  // Not sure if this has any effect or is necessary
 
                 context.filters.push(({ item }) => item != window);
                 context.anchored = false;
