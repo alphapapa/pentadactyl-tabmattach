@@ -20,7 +20,7 @@ group.commands.add(
         let { browser } = modules.config;
 
         // Not sure what to do about args.count now
-        for (let sourceTab of tabs.match(matchString, args.count, true, true)) {
+        for (let sourceTab of tabs.match(matchString, null, args.bang, true)) {
             let newTab = browser.addTab("about:blank");
             browser.stop();
             // XXX: the implementation of DnD in tabbrowser.xml suggests
