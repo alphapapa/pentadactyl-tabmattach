@@ -73,6 +73,6 @@ group.commands.add(
 
         },
         literal: 1,
-    privateData: true
-},
-true);
+        privateData: true
+    },
+    true);
