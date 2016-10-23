@@ -48,7 +48,10 @@ group.commands.add(
                 completion.buffer(context);
                 break;
             case 1:
-                let filter = context.filter.toLowerCase();
+                // These are from e.g. completion.buffer and
+                // completion.window, replacing a call like
+                // completion.buffer(context)
+                let filter = context.filter.toLowerCase();  // Not sure if this has any effect or is necessary
 
                 context.filters.push(({ item }) => item != window);
                 context.anchored = false;
@@ -58,7 +61,6 @@ group.commands.add(
                 context.completions = dactyl.windows;
                 context.filters[0] = CompletionContext.Filter.textDescription;
 
-                //completion.window(context);
                 break;
             case 2:
                 let win = dactyl.windows[Number(args[1]) - 1];
